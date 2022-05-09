@@ -32,24 +32,24 @@ console.log(bombs);
 const userNumber = [];
 let controller = false;
 
-while (userNumber.length < (100 - 16) || controller === false) {
+while (userNumber.length < 84 || controller === false) {
     const askUserNumber = Number(prompt("Inserisci un numero tra 1 e 100"));
     // 2a. SE il numero inserito dall'utente è presente nell'array di numeri generati
-    //    ALLORA la partita termina
+    //    ALLORA la partita termina e il punteggio sarà dato da il numero di volte che l'utente ha inserito un numero consentito
     if (bombs.includes(askUserNumber)) {
         controller = true;
-        console.log("Hai perso!");
-        //    SE il numero inserito dall'utente NON è presente nell'array di numeri generati e
-        //    SE l'utente ha inserito solo numeri e quest'ultimi sono compresi tra 1 e 100 e non sono stati già detti
-        //    ALLORA si continua chiedendo all'utente un nuovo numero
+        alert("Hai perso! Il tuo punteggio è:", userNumber.length);
+        // 2b. SE il numero inserito dall'utente NON è presente nell'array di numeri generati e
+        //     SE l'utente ha inserito solo numeri e quest'ultimi sono compresi tra 1 e 100 e non sono stati già detti
+        //     ALLORA si continua chiedendo all'utente un nuovo numero
     } else if (!isNaN(askUserNumber) && askUserNumber >= 1 && askUserNumber <= 100 && !userNumber.includes(askUserNumber)) {
         userNumber.push(askUserNumber);
     }
+
 }
 
-// 4. La partita termina SE l'utente inserisce un numero presente nell'array di numeri generati
-//    o SE inserisci tutti i numeri che non sono presenti nell'array di numeri generati
-
-// 5. Al termine della partita il software deve comunicare il punteggio (alert)
-//  5a. Il punteggio sarà dato da il numero di volte che l'utente ha inserito un numero consentito
-
+// 3. SE l'utente inserisce tutti i numeri che non sono presenti nell'array di numeri generati
+//    ALLORA vince e il punteggio sarà dato da il numero di volte che l'utente ha inserito un numero consentito
+if (userNumber === 84) {
+    alert("Hai vinto! Il tuo punteggio è:", userNumber.length);
+}
