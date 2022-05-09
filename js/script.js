@@ -1,7 +1,3 @@
-// 1. Creo una funzione per generare 16 numeri casuali tra 1 e 100
-//  1a. I numeri generati NON possono essere duplicati
-//  1b. Salvo questi numeri in un array
-
 // 2. Chiedo con un prompt all'utente (100 - 16) volte di inserire una numero alla volta compreso tra 1 e 100
 //  2a. Controllo che l'utente inserisca solo numeri e che questi numeri siano effettivamente compresi tra 1 e 100 (do while)
 //  2b. Controllo che il numero inserito NON sia stato già detto
@@ -22,3 +18,27 @@
 //  1a. SE difficoltà 0 => numeri casuali tra 1 e 100
 //  1a. SE difficoltà 1 => numeri casuali tra 1 e 80
 //  1a. SE difficoltà 2 => numeri casuali tra 1 e 50
+
+/*---------------
+    FUNCTION
+---------------*/
+// Funziona che genera un numero ramdom tra un min e un max
+function genericNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+/*-----------
+    MAIN
+-----------*/
+// 1. Genero un array di 16 numeri casuali tra 1 e 100
+const bombs = [];
+
+while (bombs.length < 16) {
+    let numbers = genericNumber(1, 100);
+    //  1a. I numeri generati NON possono essere duplicati
+    if (!bombs.includes(numbers)) {
+        bombs.push(numbers);
+    }
+}
+
+console.log(bombs);
