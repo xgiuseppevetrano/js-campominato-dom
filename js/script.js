@@ -50,6 +50,6 @@ while (userNumber.length < 84 || controller === false) {
 
 // 3. SE l'utente inserisce tutti i numeri che non sono presenti nell'array di numeri generati
 //    ALLORA vince e il punteggio sarà dato da il numero di volte che l'utente ha inserito un numero consentito
-if (userNumber === 84) {
+if (userNumber.lenght === 84) {
     alert("Hai vinto! Il tuo punteggio è:", userNumber.length);
 }
