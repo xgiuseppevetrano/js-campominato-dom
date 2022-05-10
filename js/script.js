@@ -16,7 +16,7 @@ let possibleNumbers;
 //  1a. Chiedo all'utente il livello di difficoltà tra 0 e 2
 do {
     difficultyLevel = Number(prompt("Choose a difficulty level between 0, 1 and 2"))
-} while (isNaN(userNumber) || userNumber < 0 || userNumber > 2);
+} while (isNaN(difficultyLevel) || difficultyLevel < 0 || difficultyLevel > 2);
 //  1b. SE il livello di difficoltà è uguale a 0 - 1 - 2
 //      ALLORA i numeri possibili saranno 100 - 80 - 50
 if (difficultyLevel === 0) {
