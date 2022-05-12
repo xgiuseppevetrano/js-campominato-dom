@@ -5,31 +5,14 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-/*-------------
-    HEADER
--------------*/
-header {
-    background-color: #fff;
-    height: 80px;
-}
-
-.form-select {
-    width: 30px;
+.container {
+    max-width: 1000px;
+    margin: auto;
 }
 
 /*----------
     MAIN
 ----------*/
 main {
-    background-color: #7fffd4;
-    height: calc(100vh - 130px);
-}
-
-
-/*-------------
-    FOOTER
--------------*/
-footer {
-    background-color: #fff;
-    height: 50px;
+    height: 100vh;
 }
